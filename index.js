@@ -1,10 +1,17 @@
 const express = require('express')
 const app = express()
+const cors = require("cors")
 const port = 2200
 
-// app.get('/home', (ref, res) =>{
-//     res.send("Good evening everyone")
-// })
+/*
+    For a a backend to display and ejs file
+    1.  Firstly set the view engine to be ejs i,e app.set("view engine", 'ejs)
+    2.  Create a folder called "views", then put all the file with an extension .ejs
+*/
+
+app.set('view engine', "ejs")
+const name = "Olawoyin Joseph"
+
 const musicDetail = [
     {
         id: 1,
@@ -84,12 +91,29 @@ const musicDetail = [
     }
 ]
 
-app.listen(port, () => {
-    console.log("Working");
-    console.log("This is the backend system");
-    
+
+app.get('/music', (req, res) => {
+    res.send(musicDetail)
 })
 
-app.get('/music', (ref, res) => {
-    res.send(musicDetail)
+// For About Section in EJS
+app.get("/about", (req, res) =>{
+    res.render("about", {name:name})
+})
+
+// For a backend to display HTML File
+/*
+    1.  app.get('/', (req, res) =>{
+            res.sendFile(__dirname + "index.html")
+        })
+*/
+
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + "/index.html")
+})
+
+app.listen(port, () => {
+    console.log("Working");
+    console.log("This is the backend system");  
 })
