@@ -8,7 +8,7 @@ const port = 2200
     1.  Firstly set the view engine to be ejs i,e app.set("view engine", 'ejs)
     2.  Create a folder called "views", then put all the file with an extension .ejs
 */
-
+app.use(cors())
 app.set('view engine', "ejs")
 const name = "Olawoyin Joseph"
 
@@ -88,7 +88,15 @@ const musicDetail = [
         nameOfSOng: "Another Miracle",
         duration: '5 mins',
         image: "https://yt3.googleusercontent.com/u6M_VlzQV3chrouoS_zIMvDWQqNjl84piwGU94gXW5TGakwj7mREJXTS_LkIbFLuQbO_jWGEo8Y=s900-c-k-c0x00ffffff-no-rj"
-    }
+    },
+
+    {
+        id:11,
+        nameOfArtist: 'Ada Ehi',
+        nameOfSOng: "I Will Sing",
+        duration: '8 mins',
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGljmyfSFVpDA5QXaim_o1AG3apwHAY5zPIpCkug7FhMwUZIC7t6BLQBEM-57az7CPNWuPHcsNggO_m8OG_Z_WdRAVlnjwijoV2S4bkeM&s=10"
+    },
 ]
 
 
