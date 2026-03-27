@@ -9,6 +9,18 @@ const port = 2200
     2.  Create a folder called "views", then put all the file with an extension .ejs
 */
 app.use(cors())
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
+
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(204)
+    }
+
+    next()
+})
+
 app.set('view engine', "ejs")
 const name = "Olawoyin Joseph"
 
@@ -32,7 +44,7 @@ const musicDetail = [
         nameOfArtist: 'Sanmi Micheal',
         nameOfSOng: "Mokore",
         duration: '8 mins',
-        image: "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20290%20287'%3E%3C/svg%3E"
+        image: "https://www.citypeopleonline.com/wp-content/uploads/2023/06/IMG-20230607-WA0030-e1686136693343.jpg"
     },
     {
         id: 4,
@@ -91,12 +103,14 @@ const musicDetail = [
     },
 
     {
-        id:11,
-        nameOfArtist: 'Ada Ehi',
-        nameOfSOng: "I Will Sing",
-        duration: '8 mins',
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGljmyfSFVpDA5QXaim_o1AG3apwHAY5zPIpCkug7FhMwUZIC7t6BLQBEM-57az7CPNWuPHcsNggO_m8OG_Z_WdRAVlnjwijoV2S4bkeM&s=10"
-    },
+        id: 11,
+        nameOfArtist: 'Ruth B',
+        nameOfSOng: "Mixed Signal",
+        duration: '6 mins',
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9qkJCGqIMBxm6b0ORI9E8qQ9jWE0f9ZCrjQ&s"
+    }
+
+
 ]
 
 
