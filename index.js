@@ -38,8 +38,8 @@ const musicDetail = [
         nameOfArtist: 'Yadah',
         nameOfSOng: "Onyewere Jesus",
         duration: '3:46',
-        image: "https://yadahworld.com/wp-content/uploads/2019/10/FAB_8500-min-scaled.jpg",
-        audio: "https://files.cvaultx.com/wp-content/uploads/music/2023/07/Yadah_-_Onye_Nwere_Jesus_CeeNaija.com_.mp3"
+        image: "https://i.scdn.co/image/ab676161000051746ca55e00b16ebf0e5f4a6684",
+        audio: "https://files.cvaultx.com/wp-
     },
     {
         id: 3,
